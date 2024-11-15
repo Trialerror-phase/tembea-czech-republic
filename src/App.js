@@ -1,25 +1,158 @@
-import logo from './logo.svg';
+import React from 'react';
+import {
+	BrowserRouter as Router,
+	Routes, Route as RouteElement,
+	Link
+} from 'react-router-dom';
+import {
+	Navbar, Nav,
+	NavDropdown, Carousel
+} from 'react-bootstrap';
+import DestinationList
+	from './components/DestinationList';
+import DestinationDetail
+	from './components/DestinationDetail';
+import ContactForm
+	from './components/ContactForm';
+// Import the custom CSS file
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+	return (
+		<Router>
+			<div>
+				<Navbar className="custom-navbar" expand="lg">
+					<Navbar.Brand className="brand-heading">
+						THE HEART OF EUROPE
+					</Navbar.Brand>
+					<Navbar.Toggle aria-controls="basic-navbar-nav" />
+					<Navbar.Collapse id="basic-navbar-nav">
+						<Nav className="ml-auto">
+							<Link to="/" className="nav-link">
+								Home
+							</Link>
+							<Link to="/contact"
+								className="nav-link">
+								Contact
+							</Link>
+							<NavDropdown title="Explore"
+								id="basic-nav-dropdown">
+								<Link to="/travel"
+									className="dropdown-item">
+									Travel
+								</Link>
+								<Link to="/destinations"
+									className="dropdown-item">
+									Destinations
+								</Link>
+								<Link to="/experience"
+									className="dropdown-item">
+									Experience
+								</Link>
+							</NavDropdown>
+						</Nav>
+					</Navbar.Collapse>
+				</Navbar>
+
+				{/* Carousel */}
+				<Carousel className="custom-carousel">
+					<Carousel.Item>
+						<img
+							className="d-block w-100 carousel-image"
+							src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Prague_Castle_Panorama.jpg"
+							alt="Prague Castle"/>
+						<Carousel.Caption>
+							<h3>Prague Castle</h3>
+							<p>Explore the iconic castle and its stunning architecture.</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+					<Carousel.Item>
+						<img
+							className="d-block w-100 carousel-image"
+							src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Cesky_Krumlov.jpg"
+							alt="Český Krumlov"/>
+						<Carousel.Caption>
+							<h3>Český Krumlov</h3>
+							<p>A fairy-tale town with a stunning castle and medieval charm.</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+					<Carousel.Item>
+						<img
+							className="d-block w-100 carousel-image"
+							src="https://upload.wikimedia.org/wikipedia/commons/3/37/Karl%C5%A1tejn_Castle.jpg"
+							alt="Karlštejn Castle"/>
+						<Carousel.Caption>
+							<h3>Karlštejn Castle</h3>
+							<p>Discover the Gothic masterpiece protecting royal treasures.</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+					<Carousel.Item>
+						<img
+							className="d-block w-100 carousel-image"
+							src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Pravcicka_Brana_2010-2.jpg"
+							alt="Bohemian Switzerland"/>
+						<Carousel.Caption>
+							<h3>Bohemian Switzerland</h3>
+							<p>Experience breathtaking sandstone formations and natural beauty.</p>
+						</Carousel.Caption>
+					</Carousel.Item>
+				</Carousel>
+				<br />
+				{/* Content of your app */}
+				<Routes>
+					<RouteElement path="/"
+						element={<DestinationList />} />
+					<RouteElement path="/destination/:id"
+						element={<DestinationDetail />} />
+					<RouteElement path="/contact"
+						element={<ContactForm />} />
+					{/* Add routes for travel, destinations, and experience */}
+				</Routes>
+				{/* Footer */}
+				<div className="custom-footer">
+					<div className="footer-section">
+						<h3>Connect with us</h3>
+						<ul className="social-links">
+							<li><a href="https://facebook.com"
+								target="_blank"
+								rel="noopener noreferrer">
+								Facebook
+							</a>
+							</li>
+							<li><a href="https://twitter.com"
+								target="_blank"
+								rel="noopener noreferrer">
+								Twitter
+							</a>
+							</li>
+							<li><a href="https://instagram.com"
+								target="_blank"
+								rel="noopener noreferrer">
+								Instagram
+							</a>
+							</li>
+						</ul>
+					</div>
+					<div className="footer-section">
+						<h3>Contact us</h3>
+						<p>Email: contact@heartofeurope.com</p>
+						<p>Phone: +420 123 456 789</p>
+					</div>
+					<div className="footer-section">
+						<h3>Newsletter</h3>
+						<p>
+							Subscribe to our newsletter
+							for updates and offers.
+						</p>
+						<form>
+							<input type="email" placeholder="Your email" />
+							<button type="submit">Subscribe</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</Router>
+	);
 }
 
 export default App;
