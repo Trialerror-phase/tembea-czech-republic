@@ -58,7 +58,7 @@ const DestinationDetail = () => {
         emailjs
             .send(
                 'service_laiebbc', // Your service ID
-                'template_gey0ctn', // Your template ID
+                'template_1a7shn8', // Your template ID
                 formData,
                 'lapgbzQ7SOQ36EeZn' // Your user ID
             )
