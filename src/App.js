@@ -59,7 +59,7 @@ const App = () => {
 					<Carousel.Item>
 						<img
 							className="d-block w-100 carousel-image"
-							src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Prague_Castle_Panorama.jpg"
+							src="/acce/prague-castle-fotolia-jpeg_header-142535.jpeg"
 							alt="Prague Castle"/>
 						<Carousel.Caption>
 							<h3>Prague Castle</h3>
@@ -69,7 +69,7 @@ const App = () => {
 					<Carousel.Item>
 						<img
 							className="d-block w-100 carousel-image"
-							src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Cesky_Krumlov.jpg"
+							src="/acce/dreamstime_xxl_151405329.jpg"
 							alt="Český Krumlov"/>
 						<Carousel.Caption>
 							<h3>Český Krumlov</h3>
@@ -79,7 +79,7 @@ const App = () => {
 					<Carousel.Item>
 						<img
 							className="d-block w-100 carousel-image"
-							src="https://upload.wikimedia.org/wikipedia/commons/3/37/Karl%C5%A1tejn_Castle.jpg"
+							src="/acce/karlstejn-town-03-czechia.jpg"
 							alt="Karlštejn Castle"/>
 						<Carousel.Caption>
 							<h3>Karlštejn Castle</h3>
@@ -89,7 +89,7 @@ const App = () => {
 					<Carousel.Item>
 						<img
 							className="d-block w-100 carousel-image"
-							src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Pravcicka_Brana_2010-2.jpg"
+							src="/acce/bohemian-switzerland-national-park-attractions-hiking-guide-bastei-bridge.jpg"
 							alt="Bohemian Switzerland"/>
 						<Carousel.Caption>
 							<h3>Bohemian Switzerland</h3>
