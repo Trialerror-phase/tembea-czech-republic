@@ -28,13 +28,20 @@ const TravelCard = styled.div`
     text-align: left;
 `;
 
-const TravelButton = styled.button`
+const TravelButton = styled.a`
+    display: inline-block;
     background: #3498db;
     color: white;
+    text-decoration: none;
     border: none;
     padding: 10px 15px;
     border-radius: 4px;
     cursor: pointer;
+    text-align: center;
+
+    &:hover {
+        background: #2c82c9;
+    }
 `;
 
 const Travel = () => {
@@ -45,17 +52,35 @@ const Travel = () => {
                 <TravelCard>
                     <h3>Explore Guides</h3>
                     <p>Get in-depth information about your next destination.</p>
-                    <TravelButton>Learn More</TravelButton>
+                    <TravelButton 
+                        href="https://www.lonelyplanet.com/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        Learn More
+                    </TravelButton>
                 </TravelCard>
                 <TravelCard>
                     <h3>Plan Itineraries</h3>
                     <p>Customize your travel plans effortlessly.</p>
-                    <TravelButton>Start Planning</TravelButton>
+                    <TravelButton 
+                        href="https://www.tripadvisor.com/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        Start Planning
+                    </TravelButton>
                 </TravelCard>
                 <TravelCard>
                     <h3>Save on Travel</h3>
                     <p>Discover exclusive deals on flights and hotels.</p>
-                    <TravelButton>Find Deals</TravelButton>
+                    <TravelButton 
+                        href="https://www.skyscanner.net/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        Find Deals
+                    </TravelButton>
                 </TravelCard>
             </TravelSection>
         </TravelContainer>

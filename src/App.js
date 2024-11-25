@@ -143,8 +143,8 @@ const App = () => {
 					</div>
 					<div className="footer-section">
 						<h3>Contact us</h3>
-						<p>Email: contact@heartofeurope.com</p>
-						<p>Phone: +420 123 456 789</p>
+						<p>Email: workotuya@gmail.com</p>
+						<p>Phone: +420 604 878 147</p>
 					</div>
 					<div className="footer-section">
 						<h3>Newsletter</h3>
