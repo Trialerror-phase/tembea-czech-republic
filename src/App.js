@@ -102,8 +102,8 @@ const App = () => {
 				<Routes>
 					<RouteElement path="/"
 						element={<DestinationList />} />
-					<RouteElement path="/destination/:id"
-						element={<DestinationDetail />} />
+					<RouteElement path="/destination/:id" element={<DestinationDetail />} />
+
 					<RouteElement path="/contact"
 						element={<ContactForm />} />
 					{/* Add routes for travel, destinations, and experience */}
