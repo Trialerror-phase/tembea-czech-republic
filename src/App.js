@@ -14,7 +14,9 @@ import DestinationDetail
 	from './components/DestinationDetail';
 import ContactForm
 	from './components/ContactForm';
+
 // Import the custom CSS file
+import Travel from './components/Travel';
 import './App.css';
 
 const App = () => {
@@ -111,6 +113,7 @@ const App = () => {
                         path="/destinations"
                         element={<DestinationList />}
                     />
+					<RouteElement path="/travel" element={<Travel />} />
 					{/* Add routes for travel, destinations, and experience */}
 				</Routes>
 				{/* Footer */}
