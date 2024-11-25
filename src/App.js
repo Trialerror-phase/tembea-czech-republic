@@ -106,6 +106,11 @@ const App = () => {
 
 					<RouteElement path="/contact"
 						element={<ContactForm />} />
+
+<RouteElement
+                        path="/destinations"
+                        element={<DestinationList />}
+                    />
 					{/* Add routes for travel, destinations, and experience */}
 				</Routes>
 				{/* Footer */}
