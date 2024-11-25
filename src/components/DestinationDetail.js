@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useParams } from 'react-router-dom'; // Import the useParams hook
+import { useParams, useNavigate } from 'react-router-dom'; // Import useNavigate hook
 import destinations from './Destinations';
 
 const DetailContainer = styled.div`
@@ -26,6 +26,8 @@ const DetailButton = styled.button`
 
 const DestinationDetail = () => {
     const { id } = useParams(); // Extract the 'id' from the URL
+    const navigate = useNavigate(); // Initialize the navigate function
+
     const destinationId = parseInt(id, 10); // Convert the 'id' to an integer
     const destination = destinations.find(
         (dest) => dest.id === destinationId
@@ -38,6 +40,11 @@ const DestinationDetail = () => {
             </div>
         );
     }
+
+    // Define handleBooking
+    const handleBooking = () => {
+        navigate(`/book/${destination.id}`); // Navigate to the booking page
+    };
 
     return (
         <DetailContainer>
@@ -53,7 +60,7 @@ const DestinationDetail = () => {
             <p>
                 Best time to visit: {destination.bestTime || 'Not specified'}
             </p>
-            <DetailButton>Book Now</DetailButton>
+            <DetailButton onClick={handleBooking}>Book Now</DetailButton>
         </DetailContainer>
     );
 };

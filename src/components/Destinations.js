@@ -14,6 +14,7 @@ const Destinations = [
         image: '/acce/dreamstime_xxl_151405329.jpg',
         rating: 4.8,
         bestTime: 'May to September',
+        bookingLink: 'https://booking.com/cesky-krumlov',
     },
     {
         id: 3,
