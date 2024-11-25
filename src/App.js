@@ -18,6 +18,7 @@ import ContactForm
 // Import the custom CSS file
 import Travel from './components/Travel';
 import Booking from './components/Booking';
+import Experience from './components/Experience';
 import './App.css';
 
 const App = () => {
@@ -116,6 +117,7 @@ const App = () => {
                     />
 					<RouteElement path="/travel" element={<Travel />} />
 					<RouteElement path="/book/:id" element={<Booking />} />
+					<RouteElement path="/experience" element={<Experience />} />
 
 					{/* Add routes for travel, destinations, and experience */}
 				</Routes>
