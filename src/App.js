@@ -19,6 +19,7 @@ import ContactForm
 import Travel from './components/Travel';
 import Booking from './components/Booking';
 import Experience from './components/Experience';
+import Home from './components/Home';
 import './App.css';
 
 const App = () => {
@@ -64,7 +65,7 @@ const App = () => {
 						<img
 							className="d-block w-100 carousel-image"
 							src="/acce/prague-castle-fotolia-jpeg_header-142535.jpeg"
-							alt="Prague Castle"/>
+							alt="Prague Castle" />
 						<Carousel.Caption>
 							<h3>Prague Castle</h3>
 							<p>Explore the iconic castle and its stunning architecture.</p>
@@ -74,7 +75,7 @@ const App = () => {
 						<img
 							className="d-block w-100 carousel-image"
 							src="/acce/dreamstime_xxl_151405329.jpg"
-							alt="Český Krumlov"/>
+							alt="Český Krumlov" />
 						<Carousel.Caption>
 							<h3>Český Krumlov</h3>
 							<p>A fairy-tale town with a stunning castle and medieval charm.</p>
@@ -84,7 +85,7 @@ const App = () => {
 						<img
 							className="d-block w-100 carousel-image"
 							src="/acce/karlstejn-town-03-czechia.jpg"
-							alt="Karlštejn Castle"/>
+							alt="Karlštejn Castle" />
 						<Carousel.Caption>
 							<h3>Karlštejn Castle</h3>
 							<p>Discover the Gothic masterpiece protecting royal treasures.</p>
@@ -94,7 +95,7 @@ const App = () => {
 						<img
 							className="d-block w-100 carousel-image"
 							src="/acce/bohemian-switzerland-national-park-attractions-hiking-guide-bastei-bridge.jpg"
-							alt="Bohemian Switzerland"/>
+							alt="Bohemian Switzerland" />
 						<Carousel.Caption>
 							<h3>Bohemian Switzerland</h3>
 							<p>Experience breathtaking sandstone formations and natural beauty.</p>
@@ -104,17 +105,16 @@ const App = () => {
 				<br />
 				{/* Content of your app */}
 				<Routes>
-					<RouteElement path="/"
-						element={<DestinationList />} />
+				<RouteElement path="/" element={<Home />} /> {/* Replace DestinationList with Home */}
 					<RouteElement path="/destination/:id" element={<DestinationDetail />} />
 
 					<RouteElement path="/contact"
 						element={<ContactForm />} />
 
-<RouteElement
-                        path="/destinations"
-                        element={<DestinationList />}
-                    />
+					<RouteElement
+						path="/destinations"
+						element={<DestinationList />}
+					/>
 					<RouteElement path="/travel" element={<Travel />} />
 					<RouteElement path="/book/:id" element={<Booking />} />
 					<RouteElement path="/experience" element={<Experience />} />
