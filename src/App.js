@@ -20,6 +20,9 @@ import Travel from './components/Travel';
 import Booking from './components/Booking';
 import Experience from './components/Experience';
 import Home from './components/Home';
+
+import BlogList from './components/BlogList';
+import BlogDetail from './components/BlogDetail';
 import './App.css';
 
 const App = () => {
@@ -40,6 +43,7 @@ const App = () => {
 								className="nav-link">
 								Contact
 							</Link>
+							<Link to="/blogs" className="dropdown-item">Blog</Link> 
 							<NavDropdown title="Explore"
 								id="basic-nav-dropdown">
 								<Link to="/travel"
@@ -118,6 +122,10 @@ const App = () => {
 					<RouteElement path="/travel" element={<Travel />} />
 					<RouteElement path="/book/:id" element={<Booking />} />
 					<RouteElement path="/experience" element={<Experience />} />
+					
+					<RouteElement path="/blogs" element={<BlogList />} />
+					<RouteElement path="/blog/:id" element={<BlogDetail />} />
+
 
 					{/* Add routes for travel, destinations, and experience */}
 				</Routes>
