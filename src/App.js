@@ -43,7 +43,7 @@ const App = () => {
 								className="nav-link">
 								Contact
 							</Link>
-							<Link to="/blogs" className="dropdown-item">Blog</Link> 
+							<Link to="/blogs" className="nav-link">Blog</Link> 
 							<NavDropdown title="Explore"
 								id="basic-nav-dropdown">
 								<Link to="/travel"
