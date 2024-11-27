@@ -1,31 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	BrowserRouter as Router,
-	Routes, Route as RouteElement,
+	Routes,
+	Route as RouteElement,
 	Link
 } from 'react-router-dom';
 import {
 	Navbar, Nav,
 	NavDropdown, Carousel
 } from 'react-bootstrap';
-import DestinationList
-	from './components/DestinationList';
-import DestinationDetail
-	from './components/DestinationDetail';
-import ContactForm
-	from './components/ContactForm';
-
-// Import the custom CSS file
+import DestinationList from './components/DestinationList';
+import DestinationDetail from './components/DestinationDetail';
+import ContactForm from './components/ContactForm';
 import Travel from './components/Travel';
 import Booking from './components/Booking';
 import Experience from './components/Experience';
 import Home from './components/Home';
-
 import BlogList from './components/BlogList';
 import BlogDetail from './components/BlogDetail';
 import './App.css';
 
 const App = () => {
+	const [theme, setTheme] = useState('light');
+
+	useEffect(() => {
+		document.documentElement.setAttribute('data-theme', theme);
+	}, [theme]);
+
+	const toggleTheme = () => {
+		setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+	};
+
 	return (
 		<Router>
 			<div>
@@ -39,31 +44,37 @@ const App = () => {
 							<Link to="/" className="nav-link">
 								Home
 							</Link>
-							<Link to="/contact"
-								className="nav-link">
+							<Link to="/contact" className="nav-link">
 								Contact
 							</Link>
-							<Link to="/blogs" className="nav-link">Blog</Link> 
-							<NavDropdown title="Explore"
-								id="basic-nav-dropdown">
-								<Link to="/travel"
-									className="dropdown-item">
+							<Link to="/blogs" className="nav-link">Blog</Link>
+							<NavDropdown title="Explore" id="basic-nav-dropdown">
+								<Link to="/travel" className="dropdown-item">
 									Travel
 								</Link>
-								<Link to="/destinations"
-									className="dropdown-item">
+								<Link to="/destinations" className="dropdown-item">
 									Destinations
 								</Link>
-								<Link to="/experience"
-									className="dropdown-item">
+								<Link to="/experience" className="dropdown-item">
 									Experience
 								</Link>
 							</NavDropdown>
 						</Nav>
 					</Navbar.Collapse>
+					{/* Theme Toggle Button */}
+					<button
+							className="theme-toggle-btn"
+							onClick={toggleTheme}
+						>
+							{theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
+						</button>
 				</Navbar>
 
+				
+				
+
 				{/* Carousel */}
+				
 				<Carousel className="custom-carousel">
 					<Carousel.Item>
 						<img
@@ -106,31 +117,25 @@ const App = () => {
 						</Carousel.Caption>
 					</Carousel.Item>
 				</Carousel>
+				
 				<br />
-				{/* Content of your app */}
+
+				{/* Routes */}
 				<Routes>
-				<RouteElement path="/" element={<Home />} /> {/* Replace DestinationList with Home */}
+					<RouteElement path="/" element={<Home />} />
 					<RouteElement path="/destination/:id" element={<DestinationDetail />} />
-
-					<RouteElement path="/contact"
-						element={<ContactForm />} />
-
-					<RouteElement
-						path="/destinations"
-						element={<DestinationList />}
-					/>
+					<RouteElement path="/contact" element={<ContactForm />} />
+					<RouteElement path="/destinations" element={<DestinationList />} />
 					<RouteElement path="/travel" element={<Travel />} />
 					<RouteElement path="/book/:id" element={<Booking />} />
 					<RouteElement path="/experience" element={<Experience />} />
-					
 					<RouteElement path="/blogs" element={<BlogList />} />
 					<RouteElement path="/blog/:id" element={<BlogDetail />} />
-
-
-					{/* Add routes for travel, destinations, and experience */}
 				</Routes>
+
 				{/* Footer */}
 				<div className="custom-footer">
+					{/* Footer content */}
 					<div className="footer-section">
 						<h3>Connect with us</h3>
 						<ul className="social-links">
@@ -174,6 +179,6 @@ const App = () => {
 			</div>
 		</Router>
 	);
-}
+};
 
 export default App;

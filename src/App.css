@@ -7,20 +7,20 @@
 .brand-heading {
   font-size: 24px;
   font-weight: bold;
-  color: #fff;
+  color: blue;
   text-decoration: none;
 }
 
 .nav-link,
 .dropdown-item {
-  color: #333;
+  color: blue;
   text-decoration: none;
   margin: 0 15px;
 }
 
 .nav-link:hover,
 .dropdown-item:hover {
-  color: #fff;
+  color: grey;
 }
 
 .custom-carousel {
@@ -173,3 +173,69 @@ button {
 button:hover {
   background-color: #2980b9;
 }
+
+/* Light Theme */
+:root {
+	--bg-color: #ffffff;
+	--text-color: #000000;
+	--link-color: #007bff;
+	--navbar-bg: #f8f9fa;
+	--footer-bg: #e9ecef;
+}
+
+/* Dark Theme */
+[data-theme='dark'] {
+	--bg-color: #121212;
+	--text-color: #ffffff;
+	--link-color: #1e90ff;
+	--navbar-bg: #333333;
+	--footer-bg: #232323;
+}
+
+/* Apply Variables */
+body {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
+
+a {
+	color: var(--link-color);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.custom-navbar {
+	background-color: var(--navbar-bg);
+}
+
+.custom-footer {
+	background-color: var(--footer-bg);
+	color: var(--text-color);
+	padding: 20px;
+	text-align: center;
+}
+
+.theme-toggle {
+	text-align: center;
+	margin: 20px 0;
+}
+
+.theme-toggle button {
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	background-color: var(--link-color);
+	color: white;
+}
+
+.theme-toggle button:hover {
+	opacity: 0.8;
+}
+
