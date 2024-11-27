@@ -181,15 +181,19 @@ button:hover {
 	--link-color: #007bff;
 	--navbar-bg: #f8f9fa;
 	--footer-bg: #e9ecef;
+	--card-bg-color: #ffffff; /* Card background for light mode */
+	--card-border-color: #dddddd; /* Card border for light mode */
 }
 
 /* Dark Theme */
 [data-theme='dark'] {
 	--bg-color: #121212;
-	--text-color: #ffffff;
+	--text-color: #1e90ff; /* Blue text in dark mode */
 	--link-color: #1e90ff;
 	--navbar-bg: #333333;
 	--footer-bg: #232323;
+	--card-bg-color: #1c1c1c; /* Card background for dark mode */
+	--card-border-color: #444444; /* Card border for dark mode */
 }
 
 /* Apply Variables */
@@ -213,6 +217,21 @@ a:hover {
 	background-color: var(--navbar-bg);
 }
 
+.theme-toggle-btn {
+	background: var(--link-color);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	padding: 5px 10px;
+	margin-left: 10px;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+.theme-toggle-btn:hover {
+	opacity: 0.8;
+}
+
 .custom-footer {
 	background-color: var(--footer-bg);
 	color: var(--text-color);
@@ -220,22 +239,18 @@ a:hover {
 	text-align: center;
 }
 
-.theme-toggle {
-	text-align: center;
-	margin: 20px 0;
+/* Card Styling */
+.card {
+	background-color: var(--card-bg-color);
+	border: 1px solid var(--card-border-color);
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 16px;
+	margin: 16px 0;
+	transition: background-color 0.3s, border-color 0.3s;
 }
 
-.theme-toggle button {
-	padding: 10px 20px;
-	font-size: 16px;
-	cursor: pointer;
-	border: none;
-	border-radius: 5px;
-	background-color: var(--link-color);
-	color: white;
+.card h3, .card p {
+	margin: 0 0 8px;
+	color: var(--text-color);
 }
-
-.theme-toggle button:hover {
-	opacity: 0.8;
-}
-
